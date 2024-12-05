@@ -18,7 +18,8 @@ public class GroundSpawner : MonoBehaviour
 
     public void SpawnGround()
     {
-        Instantiate(ground_1, new Vector3(transform.position.x + 3, -4.5f, 0), Quaternion.identity);
+        int rand_pos = Random.Range(8, 43);
+        Instantiate(ground_1, new Vector3(transform.position.x + 3, -(float)rand_pos/10, 0), Quaternion.identity);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

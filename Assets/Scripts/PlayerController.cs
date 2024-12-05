@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
         if (isGrounded)
             jump_count = 0;
 
-        if (deb > 0.1f && (isGrounded || jump_count == 1 || jump_count == 0))
+        if (deb > 0.17f && (isGrounded || jump_count == 1 || jump_count == 0))
         {
             if ((Input.touchCount > 0 || Input.GetMouseButton(0)))
             {
