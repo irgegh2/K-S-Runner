@@ -15,7 +15,6 @@ public class PlayerController : MonoBehaviour
     private float fall_multi = 11f;
     private float deb = 0.1f;
     private int jump_count = 0;
-    private bool can_jump = true;
 
     void Start()
     {
@@ -31,12 +30,9 @@ public class PlayerController : MonoBehaviour
         deb += Time.fixedDeltaTime;
 
         if (isGrounded)
-        {
-            can_jump = true;
             jump_count = 0;
-        }
 
-        if (deb > 0.1f && can_jump == true && (isGrounded || jump_count == 1))
+        if (deb > 0.1f && (isGrounded || jump_count == 1 || jump_count == 0))
         {
             if ((Input.touchCount > 0 || Input.GetMouseButton(0)))
             {
@@ -46,9 +42,6 @@ public class PlayerController : MonoBehaviour
                 rb.velocity = Vector3.up * jump_force;
             }
         }
-
-        if (jump_count == 2)
-            can_jump = false;
 
         if (rb.velocity.y < 0)
             rb.AddForce(Vector3.down * fall_multi);
