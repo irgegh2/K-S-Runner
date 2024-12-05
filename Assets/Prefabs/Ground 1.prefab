@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 375004018861325353}
   - component: {fileID: 375004018861325352}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ground 1
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48,10 +48,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1.3965018, y: -0.013427913}
+  m_Offset: {x: 1.3965018, y: -0.003979489}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -62,7 +62,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.222697, y: 0.73144186}
+  m_Size: {x: 4.222697, y: 0.71254504}
   m_EdgeRadius: 0
 --- !u!1 &375004019245255650
 GameObject:
@@ -74,8 +74,7 @@ GameObject:
   m_Component:
   - component: {fileID: 375004019245255651}
   - component: {fileID: 375004019245255648}
-  - component: {fileID: 375004019245255649}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: tile_0003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -149,19 +148,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!65 &375004019245255649
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 375004019245255650}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.18, y: 0.18, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &375004019858626049
 GameObject:
   m_ObjectHideFlags: 0
@@ -172,8 +158,7 @@ GameObject:
   m_Component:
   - component: {fileID: 375004019858626078}
   - component: {fileID: 375004019858626079}
-  - component: {fileID: 375004019858626076}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: tile_0002 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -247,19 +232,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!65 &375004019858626076
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 375004019858626049}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.18, y: 0.18, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &375004019877967084
 GameObject:
   m_ObjectHideFlags: 0
@@ -270,8 +242,7 @@ GameObject:
   m_Component:
   - component: {fileID: 375004019877967085}
   - component: {fileID: 375004019877967082}
-  - component: {fileID: 375004019877967083}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: tile_0002 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -345,19 +316,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!65 &375004019877967083
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 375004019877967084}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.18, y: 0.18, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &375004019904913893
 GameObject:
   m_ObjectHideFlags: 0
@@ -368,8 +326,7 @@ GameObject:
   m_Component:
   - component: {fileID: 375004019904913890}
   - component: {fileID: 375004019904913891}
-  - component: {fileID: 375004019904913888}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: tile_0001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -443,19 +400,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!65 &375004019904913888
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 375004019904913893}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.18, y: 0.18, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &375004020079375099
 GameObject:
   m_ObjectHideFlags: 0
@@ -466,8 +410,7 @@ GameObject:
   m_Component:
   - component: {fileID: 375004020079375096}
   - component: {fileID: 375004020079375097}
-  - component: {fileID: 375004020079375094}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: tile_0002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -541,19 +484,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!65 &375004020079375094
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 375004020079375099}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.18, y: 0.18, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &375004020110892709
 GameObject:
   m_ObjectHideFlags: 0
@@ -564,8 +494,7 @@ GameObject:
   m_Component:
   - component: {fileID: 375004020110892706}
   - component: {fileID: 375004020110892707}
-  - component: {fileID: 375004020110892704}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: tile_0002 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -639,16 +568,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!65 &375004020110892704
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 375004020110892709}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.18, y: 0.18, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
