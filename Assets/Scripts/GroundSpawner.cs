@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GroundSpawner : MonoBehaviour
 {
-    public GameObject ground_1;
+    public GameObject[] grounds;
     public bool has_ground = true;
 
     void Update()
@@ -19,7 +19,8 @@ public class GroundSpawner : MonoBehaviour
     public void SpawnGround()
     {
         int rand_pos = Random.Range(8, 43);
-        Instantiate(ground_1, new Vector3(transform.position.x + 3, -(float)rand_pos/10, 0), Quaternion.identity);
+        int rand_ground = Random.Range(0, grounds.Length);
+        Instantiate(grounds[rand_ground], new Vector3(transform.position.x + 3, -(float)rand_pos/10, 0), Quaternion.identity);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
