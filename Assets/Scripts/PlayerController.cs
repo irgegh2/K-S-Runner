@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
     public LayerMask layer;
     public Transform transfotm;
 
+    public bool is_game_over = false;
+
     private float fall_multi = 11f;
     private float deb = 0.1f;
     private int jump_count = 0;
@@ -26,25 +28,37 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        Collider2D isGrounded = Physics2D.OverlapCircle(transfotm.position, 0.05f, layer);
-        transform.position = Vector3.right * player_speed * Time.fixedDeltaTime + transform.position;
-        deb += Time.fixedDeltaTime;
-
-        if (isGrounded)
-            jump_count = 0;
-
-        if (deb > 0.17f && (isGrounded || jump_count == 1 || jump_count == 0))
+        if (is_game_over == false)
         {
-            if ((Input.touchCount > 0 || Input.GetMouseButton(0)))
-            {
-                anim.SetTrigger("jump");
-                deb = 0;
-                jump_count += 1;
-                rb.velocity = Vector3.up * jump_force;
-            }
-        }
+            Collider2D isGrounded = Physics2D.OverlapCircle(transfotm.position, 0.05f, layer);
+            transform.position = Vector3.right * player_speed * Time.fixedDeltaTime + transform.position;
+            deb += Time.fixedDeltaTime;
 
-        if (rb.velocity.y < 0)
-            rb.AddForce(Vector3.down * fall_multi);
+            if (isGrounded)
+                jump_count = 0;
+
+            if (deb > 0.17f && (isGrounded || jump_count == 1 || jump_count == 0))
+            {
+                if ((Input.touchCount > 0 || Input.GetMouseButton(0)))
+                {
+                    anim.SetTrigger("jump");
+                    deb = 0;
+                    jump_count += 1;
+                    rb.velocity = Vector3.up * jump_force;
+                }
+            }
+
+            if (rb.velocity.y < 0)
+                rb.AddForce(Vector3.down * fall_multi);
+        }
+    }
+
+    public void GameOver()
+    {
+        if (is_game_over == false)
+        {
+            is_game_over = true;
+            anim.SetTrigger("death");
+        }
     }
 }
