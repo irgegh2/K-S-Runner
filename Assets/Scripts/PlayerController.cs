@@ -61,4 +61,13 @@ public class PlayerController : MonoBehaviour
             anim.SetTrigger("death");
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Obstacle") || collision.gameObject.CompareTag("DownDetector"))
+        {
+            GameOver();
+            Debug.Log("aefrw");
+        }
+    }
 }
