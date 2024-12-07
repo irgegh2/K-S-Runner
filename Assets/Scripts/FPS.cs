@@ -30,7 +30,7 @@ public class FPS : MonoBehaviour
         }
 
         int fps = Mathf.RoundToInt(_averageFps);
-        _text.text = fps.ToString();
+        _text.text = fps.ToString() + " FPS";
 
         _timeSinceUpdate = 0f;
     }

@@ -7,6 +7,7 @@ TagManager:
   - Ground
   - Kill
   - Obstacle
+  - DownDetector
   layers:
   - Default
   - TransparentFX
