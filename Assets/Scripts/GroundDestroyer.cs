@@ -10,7 +10,7 @@ public class GroundDestroyer : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Ground"))
+        if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Obstacle"))
             Destroy(collision.gameObject);
     }
 }
