@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        Application.targetFrameRate = 120;
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
     }
