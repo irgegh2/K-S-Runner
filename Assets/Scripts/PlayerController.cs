@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class PlayerController : MonoBehaviour
     public float jump_force;
     public LayerMask layer;
     public Transform transfotm;
+    public GameObject panel;
 
     public bool is_game_over = false;
 
@@ -68,6 +70,7 @@ public class PlayerController : MonoBehaviour
         {
             is_game_over = true;
             anim.SetTrigger("death");
+            panel.SetActive(true);
         }
     }
 
