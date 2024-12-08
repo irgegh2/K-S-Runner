@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     private float fall_multi = 11f;
     private float deb = 0.1f;
     private int jump_count = 0;
+    private float speed_deb = 0;
 
     void Start()
     {
@@ -33,6 +34,7 @@ public class PlayerController : MonoBehaviour
             Collider2D isGrounded = Physics2D.OverlapCircle(transfotm.position, 0.05f, layer);
             transform.position = Vector3.right * player_speed * Time.fixedDeltaTime + transform.position;
             deb += Time.fixedDeltaTime;
+            speed_deb += Time.fixedDeltaTime;
 
             if (isGrounded)
                 jump_count = 0;
@@ -50,6 +52,13 @@ public class PlayerController : MonoBehaviour
 
             if (rb.velocity.y < 0)
                 rb.AddForce(Vector3.down * fall_multi);
+
+            if (speed_deb > 10 && player_speed < 7)
+            {
+                player_speed += 0.2f;
+                speed_deb = 0;
+            }
+
         }
     }
 
@@ -67,7 +76,6 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Obstacle") || collision.gameObject.CompareTag("DownDetector"))
         {
             GameOver();
-            Debug.Log("aefrw");
         }
     }
 }
