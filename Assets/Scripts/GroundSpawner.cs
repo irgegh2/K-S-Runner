@@ -5,16 +5,8 @@ using UnityEngine;
 public class GroundSpawner : MonoBehaviour
 {
     public GameObject[] grounds;
-    public bool has_ground = true;
+    public PlayerController Controller;
 
-    void Update()
-    {
-        if (!has_ground)
-        {
-            SpawnGround();
-            has_ground = true;
-        }
-    }
 
     public void SpawnGround()
     {
@@ -22,15 +14,12 @@ public class GroundSpawner : MonoBehaviour
         int rand_ground = Random.Range(0, grounds.Length);
         Instantiate(grounds[rand_ground], new Vector3(transform.position.x + 3, -(float)rand_pos/10, 0), Quaternion.identity);
     }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Ground"))
-            has_ground = true;
-    }
     private void OnTriggerExit2D(Collider2D collision)
     {
+        if (Controller.is_game_over)
+            return;
+
         if (collision.gameObject.CompareTag("Ground"))
-            has_ground = false;
+            SpawnGround();
     }
 }

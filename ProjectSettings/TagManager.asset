@@ -51,6 +51,9 @@ TagManager:
   - name: Decoration
     uniqueID: 3505877483
     locked: 0
+  - name: DecorGrass
+    uniqueID: 2333328749
+    locked: 0
   - name: Midground
     uniqueID: 3035778543
     locked: 0
