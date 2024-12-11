@@ -13,8 +13,11 @@ public class PlayerController : MonoBehaviour
     public LayerMask layer;
     public Transform transfotm;
     public GameObject panel;
+    public Score scoreScr;
+    public AudioSource coinSound;
 
     public bool is_game_over = false;
+    public bool stop = false;
 
     private float fall_multi = 11f;
     private float deb = 0.1f;
@@ -31,7 +34,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (is_game_over == false)
+        
+        if (is_game_over == false && stop == false)
         {
             Collider2D isGrounded = Physics2D.OverlapCircle(transfotm.position, 0.05f, layer);
             transform.position = Vector3.right * player_speed * Time.fixedDeltaTime + transform.position;
@@ -79,6 +83,26 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Obstacle") || collision.gameObject.CompareTag("DownDetector"))
         {
             GameOver();
+        } 
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Coin"))
+        {
+            coinSound.Play();
+            scoreScr.score += 3;
+            scoreScr.score_text.text = scoreScr.score.ToString();
+
+            Destroy(collision.gameObject);
         }
+    }
+
+    public void StopButton()
+    {
+        if (Time.timeScale == 1f)
+            Time.timeScale = 0f;
+        else
+            Time.timeScale = 1f;
     }
 }
