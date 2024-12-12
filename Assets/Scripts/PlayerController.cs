@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     public LayerMask layer;
     public Transform transfotm;
     public GameObject panel;
+    public GameObject stopPanel;
     public Score scoreScr;
     public AudioSource coinSound;
 
@@ -101,8 +102,13 @@ public class PlayerController : MonoBehaviour
     public void StopButton()
     {
         if (Time.timeScale == 1f)
+        {
             Time.timeScale = 0f;
-        else
+            stopPanel.SetActive(true);
+        } else
+        {
             Time.timeScale = 1f;
+            stopPanel.SetActive(false);
+        }
     }
 }
